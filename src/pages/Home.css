@@ -1,0 +1,276 @@
+.home-modern {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.premium-hero {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.4)), url('https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  padding-top: 100px;
+}
+
+.hero-badge {
+  background: rgba(246, 166, 30, 0.2);
+  color: var(--accent);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  margin-bottom: 2rem;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.hero-stats {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem 2.5rem !important;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Services Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.service-link:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.highlight-card {
+  border: 2px solid var(--accent);
+  background: var(--white);
+}
+
+/* Why Us Section */
+.bg-dark-deep {
+  background-color: #0a192f;
+}
+
+.white-text {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.why-us-list {
+  list-style: none;
+}
+
+.why-us-list li {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.check {
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.why-us-list h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.why-us-list p {
+  opacity: 0.7;
+}
+
+.why-us-image img {
+  width: 100%;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Pricing Section */
+.pricing-card {
+  text-align: center;
+  position: relative;
+}
+
+.pricing-header {
+  margin-bottom: 2.5rem;
+}
+
+.price-tag {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.pricing-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+}
+
+.faded {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.featured-pricing {
+  transform: scale(1.05);
+  border: 2px solid var(--accent);
+  background: var(--white);
+}
+
+.premium-label {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Booking CTA */
+.cta-box {
+  background: var(--primary);
+  color: var(--white);
+  padding: 5rem 3rem !important;
+}
+
+.cta-box h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.btn-large {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .hero-stats {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 3rem;
+  }
+  
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-pricing {
+    transform: scale(1);
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,121 @@
+.about-modern {
+  overflow-x: hidden;
+}
+
+/* About Hero */
+.about-hero {
+  background: var(--bg-light);
+  padding: 180px 0 100px;
+  background-image: radial-gradient(circle at 2px 2px, rgba(26, 54, 93, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.about-hero .hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Common Section Typography */
+.subtitle-bengali {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.bengali-text {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  font-style: italic;
+}
+
+/* Services Grid (10-column or Flexible) */
+.services-grid-10 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.service-detail-card {
+  position: relative;
+  padding: 3rem 2rem !important;
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.service-detail-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.service-detail-card .num {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.5;
+}
+
+.service-detail-card .icon {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-detail-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.service-detail-card .bengali-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Choose Section Overrides */
+.check-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: #25d366;
+  color: var(--white);
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-large:hover {
+  transform: scale(1.05);
+  background: #22c35e;
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* Glow Border & CTA Banner Extras */
+.GlowBorder {
+  border: 1px solid rgba(246, 166, 30, 0.4) !important;
+  box-shadow: 0 0 50px rgba(246, 166, 30, 0.1) !important;
+}
+
+@media (max-width: 768px) {
+  .services-grid-10 {
+    grid-template-columns: 1fr;
+  }
+}

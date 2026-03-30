@@ -1,0 +1,61 @@
+.booking-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.booking-form .form-control {
+    width: 100% !important;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px 12px;
+    background: none;
+}
+
+.service_fields {
+    margin-top: 5px;
+}
+
+.btn {
+    padding: 10px 25px;
+    margin-top: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-primary {
+    background: #ffa500;
+}
+
+.submit {
+    text-align: right;
+}
+
+.iti.iti--allow-dropdown {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.title-wrap {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-title {
+    width: 60%;
+    line-height: 35px;
+    text-transform: capitalize !important;
+}
+
+@media (max-width: 768px) {
+    .form-title {
+        width: 100%;
+    }
+}
