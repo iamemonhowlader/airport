@@ -96,7 +96,6 @@
 .vehicle-card:hover img {
   transform: scale(1.1);
 }
-
 .vehicle-info h4 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
