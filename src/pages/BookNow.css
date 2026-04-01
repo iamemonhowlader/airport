@@ -1,0 +1,131 @@
+.booking-container {
+  display: flex;
+  min-height: 90vh;
+  gap: 4rem;
+  align-items: flex-start;
+  padding: 120px 0;
+}
+
+.booking-info {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+}
+
+.booking-info-img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.booking-info-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.booking-info-text {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.booking-form-wrapper {
+  flex: 1.2;
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin-left: 0.5rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(246, 166, 30, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 10px 20px rgba(26, 54, 93, 0.2);
+  margin-top: 1rem;
+}
+
+.form-submit-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(26, 54, 93, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .booking-container {
+    flex-direction: column;
+    padding: 80px 0;
+  }
+  
+  .booking-info {
+    position: static;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  
+  .booking-info-title {
+    font-size: 2rem;
+  }
+}
