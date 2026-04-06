@@ -101,48 +101,47 @@ const Home = () => {
             {/* Pricing Section */}
             <section className="section-padding pricing-section">
                 <div className="container text-center mb-50">
-                    <h2 className="section-title">Transparent <span className="accent-text">Pricing</span></h2>
+                    <h2 className="section-title">Our Packages <span className="accent-text">(Starting From)</span></h2>
                 </div>
                 <div className="container grid-3">
                     <div className="pricing-card glass-card">
                         <div className="pricing-header">
-                            <span className="price-tag">৳3,500</span>
-                            <h3>Standard</h3>
+                            <span className="price-tag">BDT 500 / USD 4.99</span>
+                            <h3>SILVER</h3>
                         </div>
                         <ul className="pricing-features">
-                            <li>Meet at Terminal</li>
-                            <li>Fast Track Immigration</li>
-                            <li>Baggage Assistance</li>
-                            <li className="faded">Lounge Access</li>
+                            <li>From departure drop-off up to immigration or after immigration up to arrival pickup point</li>
+                            <li>Luggage Handling</li>
+                            <li>Per Person</li>
                         </ul>
-                        <button className="btn-primary w-100">Select Plan</button>
+                        <button className="btn-primary w-100">Book Now</button>
                     </div>
                     <div className="pricing-card glass-card featured-pricing">
                         <div className="premium-label">Most Popular</div>
                         <div className="pricing-header">
-                            <span className="price-tag">৳5,500</span>
-                            <h3>Premium Plus</h3>
+                            <span className="price-tag">BDT 1000 / USD 8.99</span>
+                            <h3>GOLD</h3>
                         </div>
                         <ul className="pricing-features">
-                            <li>Meet at Gate</li>
-                            <li>Fast Track Immigration</li>
-                            <li>Full Baggage Porter</li>
-                            <li>VIP Lounge Service</li>
+                            <li>From departure drop-off up to Boarding Bridge or from on arrival immigration point up to arrival pickup point</li>
+                            <li>Luggage Handling</li>
+                            <li>Immigration assistance</li>
+                            <li>Per Person</li>
                         </ul>
-                        <button className="btn-accent w-100">Select Plan</button>
+                        <button className="btn-accent w-100">Book Now</button>
                     </div>
                     <div className="pricing-card glass-card">
                         <div className="pricing-header">
-                            <span className="price-tag">Custom</span>
-                            <h3>Group / VIP</h3>
+                            <span className="price-tag">BDT 1500 / USD 12.99</span>
+                            <h3>PLATINUM</h3>
                         </div>
                         <ul className="pricing-features">
-                            <li>Dedicated Account Manager</li>
-                            <li>Multiple Family Members</li>
-                            <li>Private Transfer</li>
-                            <li>Exclusive Concierge</li>
+                            <li>On arrival visa assistance</li>
+                            <li>Domestics to international luggage assistance and vise versa</li>
+                            <li>Luggage Handling</li>
+                            <li>Per Person</li>
                         </ul>
-                        <button className="btn-primary w-100">Contact Us</button>
+                        <button className="btn-primary w-100">Book Now</button>
                     </div>
                 </div>
             </section>
