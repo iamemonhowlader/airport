@@ -116,7 +116,29 @@
   }
 }
 
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 60px 0;
+  }
+  
+  .booking-info-title {
+    font-size: 2.2rem;
+  }
+  
+  .booking-info-text {
+    font-size: 1.1rem;
+  }
+  
+  .booking-info-img {
+    margin-bottom: 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
+  .booking-container {
+    padding: 40px 0;
+  }
+  
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -126,6 +148,34 @@
   }
   
   .booking-info-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .booking-info-text {
+    font-size: 1rem;
+  }
+  
+  .form-input, .form-select, .form-textarea {
+    padding: 0.875rem 1rem;
+  }
+  
+  .form-submit-btn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-info-title {
+    font-size: 1.5rem;
+  }
+  
+  .booking-info-text {
+    font-size: 0.95rem;
+  }
+  
+  .form-input, .form-select, .form-textarea {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 }

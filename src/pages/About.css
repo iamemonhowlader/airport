@@ -32,10 +32,82 @@
   font-style: italic;
 }
 
+/* Split Layout for About Page */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.image-overlay-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 20px rgba(246, 166, 30, 0.3);
+}
+
+.about-content {
+  padding: 2rem;
+}
+
+.description-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mini-stat {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-light);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mini-stat .val {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.mini-stat .lbl {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 /* Services Grid (10-column or Flexible) */
 .services-grid-10 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -115,7 +187,70 @@
 }
 
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 120px 0 80px;
+  }
+  
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-content {
+    padding: 1rem;
+  }
+  
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mini-stat {
+    padding: 1.5rem;
+  }
+  
+  .mini-stat .val {
+    font-size: 2rem;
+  }
+  
   .services-grid-10 {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-detail-card {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .service-detail-card .icon {
+    font-size: 2.5rem;
+  }
+  
+  .service-detail-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .service-detail-card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .service-detail-card .icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-detail-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .service-detail-card .bengali-desc {
+    font-size: 0.9rem;
   }
 }

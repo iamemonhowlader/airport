@@ -102,11 +102,91 @@
   }
 }
 
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 40vh;
+    padding-top: 80px;
+  }
+  
+  .contact-layout {
+    gap: 2rem;
+  }
+  
+  .contact-info-card {
+    padding: 2.5rem;
+  }
+  
+  .contact-form-card {
+    padding: 2.5rem;
+  }
+  
+  .contact-map-wrapper {
+    height: 350px;
+  }
+}
+
 @media (max-width: 640px) {
+  .contact-hero {
+    min-height: 35vh;
+    padding-top: 60px;
+  }
+  
+  .contact-layout {
+    gap: 1.5rem;
+  }
+  
+  .contact-info-card {
+    padding: 2rem;
+  }
+  
+  .contact-form-card {
+    padding: 2rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .contact-icon {
+    margin: 0 auto;
+  }
+  
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
+  
   .full-span {
     grid-column: span 1;
+  }
+  
+  .contact-map-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    min-height: 30vh;
+    padding-top: 50px;
+  }
+  
+  .contact-info-card {
+    padding: 1.5rem;
+  }
+  
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .contact-map-wrapper {
+    height: 250px;
   }
 }

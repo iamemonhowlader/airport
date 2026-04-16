@@ -7,8 +7,11 @@ import CarService from './pages/CarService';
 import MeetGreetService from './pages/MeetGreetService';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import { useLenis } from './utils/lenis';
 
 function App() {
+  useLenis();
+  
   return (
     <Router>
       <Layout>

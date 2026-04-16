@@ -239,7 +239,111 @@
 }
 
 @media (max-width: 768px) {
+  .car-service-hero {
+    padding: 100px 1rem;
+    min-height: 60vh;
+  }
+  
+  .car-service-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .car-service-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .vehicle-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .vehicle-img-wrapper {
+    height: 200px;
+  }
+  
+  .benefit-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .benefit-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .benefit-icon {
+    margin: 0 auto;
+  }
+  
   .how-it-works-steps {
     flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .step-card {
+    min-width: auto;
+  }
+  
+  .step-number {
+    font-size: 3rem;
+  }
+  
+  .booking-strip {
+    padding: 3rem 1.5rem;
+  }
+  
+  .booking-strip h2 {
+    font-size: 1.8rem;
+  }
+  
+  .booking-strip p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-service-hero {
+    padding: 80px 1rem;
+    min-height: 50vh;
+  }
+  
+  .car-service-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .car-service-hero p {
+    font-size: 1rem;
+  }
+  
+  .vehicle-img-wrapper {
+    height: 180px;
+  }
+  
+  .vehicle-info h4 {
+    font-size: 1.1rem;
+  }
+  
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .step-number {
+    font-size: 2.5rem;
+  }
+  
+  .booking-strip {
+    padding: 2rem 1rem;
+  }
+  
+  .booking-strip h2 {
+    font-size: 1.5rem;
   }
 }
