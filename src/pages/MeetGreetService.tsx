@@ -33,7 +33,7 @@ const MeetGreetService = () => {
                     </div>
                     <div className="feature-image reveal-right">
                         <div className="glass-frame">
-                            <img src="/departure_service_assist_1774860040434.png" alt="Departure Assistance Dhaka" />
+                            <img src="/images/new4.png" alt="Departure Assistance Dhaka" />
                         </div>
                     </div>
                 </div>

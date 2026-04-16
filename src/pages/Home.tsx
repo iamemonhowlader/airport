@@ -93,7 +93,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="why-us-image">
-                       <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop" alt="VIP Airport Support" />
+                       <img src="/images/new.png" alt="VIP Airport Support" />
                     </div>
                 </div>
             </section>

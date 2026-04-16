@@ -12,19 +12,19 @@ const CarService = () => {
         {
             title: "Sedan Car",
             capacity: "1-3 Passengers",
-            img: "/images/sedan.png",
+            img: "/images/new2.png",
             description: "Perfect for couples or small families. Reliable, air-conditioned, and fuel-efficient for city and airport runs."
         },
         {
             title: "Microbus",
             capacity: "6-8 Passengers",
-            img: "/images/microbus.png",
+            img: "/images/new3.png",
             description: "Ideal for groups with luggage. Offers ample space and a smooth ride to and from the airport."
         },
         {
             title: "Luxury VIP Car",
             capacity: "Premium Experience",
-            img: "/images/vip_car.png",
+            img: "/images/new4.png",
             description: "Exquisite transportation for VIPs, executives, and special guests. High-end comfort and discretion."
         }
     ];

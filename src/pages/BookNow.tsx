@@ -40,7 +40,7 @@ const BookNow = () => {
                     <div className="booking-info">
                         <div className="glass-card">
                             <img 
-                                src="/images/meet_greet_booking.png" 
+                                src="/images/new3.png" 
                                 alt="Airport Meet & Greet" 
                                 className="booking-info-img"
                             />

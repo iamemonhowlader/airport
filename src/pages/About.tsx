@@ -17,7 +17,7 @@ const About = () => {
             <section className="section-padding bg-white">
                 <div className="container split-layout">
                     <div className="about-image glass-card">
-                        <img src="/dhaka_airport_exterior_1774859652325.png" alt="Hazrat Shahjalal International Airport Dhaka" />
+                        <img src="/images/new2.png" alt="Hazrat Shahjalal International Airport Dhaka" />
                         <div className="image-overlay-badge">
                             <span className="years">EST. 2020</span>
                         </div>
