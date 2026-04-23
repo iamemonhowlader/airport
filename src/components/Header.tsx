@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="container nav-wrapper">
                 <div className="logo">
                     <Link to="/" className="logo-link">
-                        <span className="logo-main">ELITE<span className="accent-dot">.</span>AIRPORT</span>
+                        <span className="logo-main">Dhaka airport <span className="accent-dot">meet and greet</span></span>
                     </Link>
                 </div>
 

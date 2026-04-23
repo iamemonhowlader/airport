@@ -10,8 +10,8 @@ const Home = () => {
                     <div className="hero-content animate-fade-up">
                         <span className="hero-badge">Award-Winning Airport Services</span>
                         <h1 className="hero-title">
-                            Elite <span className="accent-text">Meet & Greet</span> <br /> 
-                            At Dhaka Airport
+                            Dhaka airport <br /> 
+                            <span className="accent-text">meet and greet</span>
                         </h1>
                         <p className="hero-subtitle">
                             Skip the queues and experience stress-free travel. Our professional team handles your 
@@ -38,7 +38,7 @@ const Home = () => {
             {/* Core Services */}
             <section className="section-padding services-section">
                 <div className="container text-center mb-50">
-                    <h2 className="section-title">Our Premium <span className="accent-text">Services</span></h2>
+                    <h2 className="section-title">Our <span className="accent-text">Packages</span></h2>
                     <p className="section-subtitle">Tailored assistance for every type of traveler</p>
                 </div>
                 <div className="container grid-3">
@@ -114,7 +114,7 @@ const Home = () => {
                             <li>Luggage Handling</li>
                             <li>Per Person</li>
                         </ul>
-                        <button className="btn-primary w-100">Book Now</button>
+                        <Link to="/book-now/" className="btn-primary w-100 d-block text-center">Book Now</Link>
                     </div>
                     <div className="pricing-card glass-card featured-pricing">
                         <div className="premium-label">Most Popular</div>
@@ -128,7 +128,7 @@ const Home = () => {
                             <li>Immigration assistance</li>
                             <li>Per Person</li>
                         </ul>
-                        <button className="btn-accent w-100">Book Now</button>
+                        <Link to="/book-now/" className="btn-accent w-100 d-block text-center">Book Now</Link>
                     </div>
                     <div className="pricing-card glass-card">
                         <div className="pricing-header">
@@ -141,7 +141,7 @@ const Home = () => {
                             <li>Luggage Handling</li>
                             <li>Per Person</li>
                         </ul>
-                        <button className="btn-primary w-100">Book Now</button>
+                        <Link to="/book-now/" className="btn-primary w-100 d-block text-center">Book Now</Link>
                     </div>
                 </div>
             </section>

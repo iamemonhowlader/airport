@@ -6,7 +6,7 @@
 .premium-hero {
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.4)), url('https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop');
+  background: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.4)), url('/images/new.png');
   background-size: cover;
   background-position: center;
   display: flex;

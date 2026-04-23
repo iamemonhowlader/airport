@@ -6,13 +6,10 @@ const Footer = () => {
         <footer className="footer-modern">
             <div className="container footer-grid">
                 <div className="footer-brand">
-                    <span className="logo-text">ELITE<span className="accent-dot">.</span>AIRPORT</span>
+                    <span className="logo-text">Dhaka airport <span className="accent-dot">meet and greet</span></span>
                     <p>Experience the ultimate in airport luxury. Our mission is to provide stress-free arrival and departure assistance at Dhaka's Hazrat Shahjalal International Airport.</p>
                     <div className="social-links">
-                        <a href="#"><i className="ri-facebook-fill"></i></a>
-                        <a href="#"><i className="ri-twitter-line"></i></a>
-                        <a href="#"><i className="ri-linkedin-fill"></i></a>
-                        <a href="#"><i className="ri-instagram-line"></i></a>
+                        <a href="https://www.facebook.com/airporthelpservicebd"><i className="ri-facebook-fill"></i></a>
                     </div>
                 </div>
                 
@@ -35,10 +32,10 @@ const Footer = () => {
                 <div className="footer-contact">
                     <h4>Connect</h4>
                     <p><i className="ri-map-pin-line"></i> Departure Terminal 1, HSIA, Dhaka</p>
-                    <p><i className="ri-phone-line"></i> +8801790754575</p>
-                    <p><i className="ri-mail-line"></i> book@eliteairport.bd</p>
+                    <p><i className="ri-phone-line"></i> +8801325172266</p>
+                    <p><i className="ri-mail-line"></i> airporthelpservicebd@gmail.com</p>
                     <div className="whatsapp-box">
-                        <a href="https://wa.me/01790754575" className="btn-whatsapp">
+                        <a href="https://wa.me/8801325172266" className="btn-whatsapp">
                             <i className="ri-whatsapp-line"></i> Chat on WhatsApp
                         </a>
                     </div>
@@ -47,7 +44,7 @@ const Footer = () => {
             
             <div className="footer-bottom">
                 <div className="container split-bottom">
-                    <p>© 2025 Elite Airport Service BD. All Rights Reserved.</p>
+                    <p>© 2025 Dhaka airport meet and greet. All Rights Reserved.</p>
                     <div className="legal-links">
                         <a href="#">Privacy Policy</a>
                         <span>|</span>

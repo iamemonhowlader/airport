@@ -15,7 +15,7 @@ const Contact = () => {
             {/* Hero */}
             <section className="contact-hero">
                 <div className="container">
-                    <span className="hero-badge" style={{ background: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.2)', color: 'var(--white)' }}>Contact Us | যোগাযোগ করুন</span>
+                    <span className="hero-badge" style={{ background: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.2)', color: 'var(--white)' }}>Contact Us</span>
                     <h1 className="hero-title" style={{ fontSize: '3.5rem', marginBottom: '4rem' }}>We Are Here <span className="gradient-text hero-accent">To Assist You</span></h1>
                 </div>
             </section>
@@ -32,7 +32,6 @@ const Contact = () => {
                                 <div className="contact-detail">
                                     <h4>Our Office</h4>
                                     <p>Hazrat Shahjalal International Airport, Dhaka, Bangladesh</p>
-                                    <p className="bengali-text">হযরত শাহজালাল আন্তর্জাতিক বিমানবন্দর, ঢাকা</p>
                                 </div>
                             </div>
 
@@ -40,8 +39,7 @@ const Contact = () => {
                                 <div className="contact-icon">📞</div>
                                 <div className="contact-detail">
                                     <h4>Phone Number</h4>
-                                    <a href="tel:+8801790754575">+8801790-754575</a><br/>
-                                    <a href="tel:+8801970754575">+8801970-754575</a>
+                                    <a href="tel:+8801325172266">+8801325-172266</a>
                                 </div>
                             </div>
 
@@ -49,7 +47,6 @@ const Contact = () => {
                                 <div className="contact-icon">✉️</div>
                                 <div className="contact-detail">
                                     <h4>Email Support</h4>
-                                    <a href="mailto:info@airporthelpservicebd.com">info@airporthelpservicebd.com</a><br/>
                                     <a href="mailto:airporthelpservicebd@gmail.com">airporthelpservicebd@gmail.com</a>
                                 </div>
                             </div>
@@ -58,7 +55,7 @@ const Contact = () => {
                                 <div className="contact-icon">💬</div>
                                 <div className="contact-detail">
                                     <h4>24/7 WhatsApp</h4>
-                                    <a href="https://wa.me/8801790754575" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+                                    <a href="https://wa.me/8801325172266" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
                                 </div>
                             </div>
                         </div>

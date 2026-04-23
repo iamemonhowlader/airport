@@ -7,7 +7,7 @@ const MeetGreetService = () => {
             {/* Hero */}
             <section className="services-hero">
                 <div className="container text-center animate-fade-up">
-                    <span className="hero-badge">Our Services | আমাদের সেবাসমূহ</span>
+                    <span className="hero-badge">Our Services</span>
                     <h1 className="hero-title">Premier Airport Excellence <br/><span className="accent-text">At Dhaka (DAC)</span></h1>
                     <p className="hero-subtitle">Experience the pinnacle of airport hospitality with our end-to-end meet and greet services at Hazrat Shahjalal International Airport.</p>
                 </div>
@@ -19,15 +19,15 @@ const MeetGreetService = () => {
                     <div className="feature-content reveal-left">
                         <span className="step-num">01. Service Focus</span>
                         <h2 className="section-title">Departure <span className="accent-text">Assistance</span></h2>
-                        <h3 className="bengali-title">বর্হিগমন সহায়তা (Departure Service)</h3>
+                        <h3 className="service-title-sub">Departure Service</h3>
                         <p className="description-text">
                             Starting your journey shouldn't be stressful. We receive you at the gate, handle all baggage scanning, perform airline check-in formalities, and accompany you to the immigration gate.
                         </p>
                         <ul className="feature-list">
-                            <li><i className="ri-checkbox-circle-fill"></i> নির্দিষ্ট গেটে অভ্যর্থনা ও সহায়তা</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> মালামাল সংগ্রহ ও সিকিউরিটি স্ক্যান সম্পন্ন করা</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> এয়ারলাইন্স চেক-ইন ও মালামাল বুকিং সহায়তা</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> ইমিগ্রেশন গেট পর্যন্ত নিরবচ্ছিন্ন সহায়তা</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Reception and assistance at designated gates</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Luggage collection and security scan completion</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Airline check-in and luggage booking assistance</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Seamless assistance up to the immigration gate</li>
                         </ul>
                         <a href="/book-now/" className="btn-primary mt-30">Book Departure Help</a>
                     </div>
@@ -50,15 +50,15 @@ const MeetGreetService = () => {
                     <div className="feature-content reveal-right">
                         <span className="step-num">02. Service Focus</span>
                         <h2 className="section-title">Arrival <span className="accent-text">Hospitality</span></h2>
-                        <h3 className="bengali-title">আগমনী সহায়তা (Arrival Service)</h3>
+                        <h3 className="service-title-sub">Arrival Service</h3>
                         <p className="description-text">
                             Arriving in Dhaka? We greet you at the immigration or boarding bridge, collect your luggage from the belt, and handle customs formalities until we load your bags into your vehicle.
                         </p>
                         <ul className="feature-list">
-                            <li><i className="ri-checkbox-circle-fill"></i> ইমিগ্রেশন বা বোডিং ব্রিজ থেকে অভ্যর্থনা</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> নির্দিষ্ট বেল্ট থেকে মালামাল সংগ্রহ</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> কাস্টম আনুষ্ঠানিকতা শেষ করা</li>
-                            <li><i className="ri-checkbox-circle-fill"></i> গাড়ি পাকিং/গাড়ী পর্যন্ত ব্যাগ পৌঁছে দেওয়া</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Reception from immigration or boarding bridge</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Luggage collection from designated belts</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Completion of customs formalities</li>
+                            <li><i className="ri-checkbox-circle-fill"></i> Luggage delivery to parking/car</li>
                         </ul>
                         <a href="/book-now/" className="btn-outline">Pre-Book Arrival Help</a>
                     </div>
@@ -79,7 +79,7 @@ const MeetGreetService = () => {
                             <div className="luxury-icon">🛋️</div>
                             <h3>Executive Lounge Entry</h3>
                             <p>Access the 5-star Balaka Lounge. Enjoy buffet meals, relax, and use high-speed WiFi before your flight.</p>
-                            <span className="bengali-label">লাউঞ্জ সুবিধা - বুফে এবং বিশ্রাম</span>
+                            <span className="service-label">Lounge facility - Buffet and Rest</span>
                         </div>
                         
                         {/* VOA */}
@@ -87,7 +87,7 @@ const MeetGreetService = () => {
                             <div className="luxury-icon">🛂</div>
                             <h3>Visa On Arrival (VOA)</h3>
                             <p>We facilitate the VOA process for foreign guests, ensuring a fast and error-free legal entry into Bangladesh.</p>
-                            <span className="bengali-label">বিদেশি যাত্রীদের জন্য ভিসা সহায়তা</span>
+                            <span className="service-label">Visa assistance for foreign passengers</span>
                         </div>
 
                         {/* Car Service */}
@@ -95,7 +95,7 @@ const MeetGreetService = () => {
                             <div className="luxury-icon">🚘</div>
                             <h3>Airport Transfer</h3>
                             <p>Domestic to International transfer or luxury vehicle transport to your hotel/residence in Dhaka.</p>
-                            <span className="bengali-label">নিরাপদ এয়ারপোর্ট ট্রান্সফার সুবিধা</span>
+                            <span className="service-label">Secure airport transfer facility</span>
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@ const MeetGreetService = () => {
                                 <p>Our 60+ member team is standing by to assist with medical, corporate, or group requirements.</p>
                             </div>
                             <div className="btn-side">
-                                <a href="tel:+8801790754575" className="btn-luxury">
+                                <a href="tel:+8801325172266" className="btn-luxury">
                                     <i className="ri-phone-fill"></i> Call Expert Assistance
                                 </a>
                             </div>

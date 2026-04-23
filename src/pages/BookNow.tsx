@@ -5,10 +5,12 @@ const BookNow = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         phoneNumber: '',
+        country: '',
         serviceType: '',
         flightCode: '',
         destination: '',
         date: '',
+        etpSystem: false,
         guestCount: '',
         email: '',
         uploadImage: null,
@@ -17,10 +19,12 @@ const BookNow = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const target = e.target as HTMLInputElement;
-        const { name, value, type } = target;
+        const { name, value, type, checked } = target;
         
         if (type === 'file' && target.files) {
             setFormData(prev => ({ ...prev, [name]: target.files![0] }));
+        } else if (type === 'checkbox') {
+            setFormData(prev => ({ ...prev, [name]: checked }));
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
@@ -44,7 +48,7 @@ const BookNow = () => {
                                 alt="Airport Meet & Greet" 
                                 className="booking-info-img"
                             />
-                            <h2 className="booking-info-title gradient-text">Book Your Meet & Greet Service</h2>
+                            <h2 className="booking-info-title gradient-text">Book Dhaka airport meet and greet</h2>
                             <p className="booking-info-text">
                                 Don't let airport logistics stress you out. Whether you’re arriving or departing Hazrat Shahjalal International Airport, our professional concierges are here to ensure your journey is seamless and comfortable.
                             </p>
@@ -82,6 +86,15 @@ const BookNow = () => {
                                         required 
                                         onChange={handleChange}
                                     />
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="form-label">Country / Package Group</label>
+                                    <select name="country" className="form-select" required onChange={handleChange}>
+                                        <option value="">—Select Country Group—</option>
+                                        <option value="arabian">Arabian</option>
+                                        <option value="zipter">Zipter</option>
+                                    </select>
                                 </div>
 
                                 <div className="form-group">
@@ -129,15 +142,27 @@ const BookNow = () => {
                                     />
                                 </div>
 
+                                <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <input 
+                                        type="checkbox" 
+                                        name="etpSystem" 
+                                        id="etpSystem"
+                                        onChange={handleChange}
+                                    />
+                                    <label htmlFor="etpSystem" className="form-label" style={{ marginBottom: 0 }}>Add ETP System Option</label>
+                                </div>
+
                                 <div className="form-group">
                                     <label className="form-label">Number of Guests</label>
-                                    <select name="guestCount" className="form-select" required onChange={handleChange}>
-                                        <option value="">—Please choose an option—</option>
-                                        <option value="1">1 Person</option>
-                                        <option value="2">2 Persons</option>
-                                        <option value="3-5">3-5 Persons</option>
-                                        <option value="6plus">6+ Persons</option>
-                                    </select>
+                                    <input 
+                                        type="number" 
+                                        name="guestCount" 
+                                        placeholder="Enter guest count" 
+                                        className="form-input" 
+                                        min="1"
+                                        required 
+                                        onChange={handleChange}
+                                    />
                                 </div>
 
                                 <div className="form-group">
@@ -153,7 +178,7 @@ const BookNow = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="form-label">Upload Image / Ticket</label>
+                                    <label className="form-label">Package Photo / Upload Ticket</label>
                                     <input 
                                         type="file" 
                                         name="uploadImage" 
