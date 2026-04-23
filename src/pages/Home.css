@@ -9,10 +9,12 @@
   background: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.4)), url('/images/new.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   color: var(--white);
   padding-top: 100px;
+  transition: all 0.5s ease;
 }
 
 .hero-badge {
@@ -52,7 +54,9 @@
 }
 
 .btn-outline {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   border: 2px solid var(--white);
   color: var(--white);
   padding: 1rem 2.5rem;
@@ -283,11 +287,18 @@
 
 @media (max-width: 768px) {
   .premium-hero {
-    padding-top: 120px;
+    padding-top: 180px;
+    padding-bottom: 60px;
+    min-height: auto;
+    background-size: 100% auto; /* Show full image width without zoom */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #0a192f; /* Fallback color matching the image theme */
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
   
   .hero-subtitle {

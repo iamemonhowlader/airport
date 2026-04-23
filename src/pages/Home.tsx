@@ -19,7 +19,9 @@ const Home = () => {
                         </p>
                         <div className="hero-actions">
                             <Link to="/book-now/" className="btn-accent">Book Now</Link>
-                            <Link to="/services/" className="btn-outline">Our Services</Link>
+                            <a href="https://wa.me/8801325172266" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                                <i className="ri-whatsapp-line"></i> WhatsApp Us
+                            </a>
                         </div>
                     </div>
                     <div className="hero-stats">

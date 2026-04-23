@@ -83,6 +83,41 @@
   resize: vertical;
 }
 
+/* Phone Input with Country Code */
+.phone-input-wrapper {
+  display: flex;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: var(--transition-fast);
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(246, 166, 30, 0.1);
+  transform: translateY(-2px);
+}
+
+.country-code-select {
+  width: 100px;
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  background: var(--bg-light);
+  padding: 0 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.phone-main-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 .form-submit-btn {
   width: 100%;
   padding: 1.25rem;

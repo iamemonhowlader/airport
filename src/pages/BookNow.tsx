@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { countryCodes } from '../utils/countryCodes';
 import './BookNow.css';
 
 const BookNow = () => {
     const [formData, setFormData] = useState({
         fullName: '',
+        countryCode: '+880',
         phoneNumber: '',
         country: '',
         serviceType: '',
@@ -78,14 +80,28 @@ const BookNow = () => {
 
                                 <div className="form-group">
                                     <label className="form-label">Phone Number</label>
-                                    <input 
-                                        type="tel" 
-                                        name="phoneNumber" 
-                                        placeholder="Ex: +880123456789" 
-                                        className="form-input" 
-                                        required 
-                                        onChange={handleChange}
-                                    />
+                                    <div className="phone-input-wrapper">
+                                        <select 
+                                            name="countryCode" 
+                                            className="country-code-select" 
+                                            value={formData.countryCode} 
+                                            onChange={handleChange}
+                                        >
+                                            {countryCodes.map((item) => (
+                                                <option key={item.iso} value={item.code}>
+                                                    {item.iso} ({item.code})
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <input 
+                                            type="tel" 
+                                            name="phoneNumber" 
+                                            placeholder="0123456789" 
+                                            className="form-input phone-main-input" 
+                                            required 
+                                            onChange={handleChange}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div className="form-group">
