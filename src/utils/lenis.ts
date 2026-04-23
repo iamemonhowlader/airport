@@ -11,6 +11,9 @@ export const useLenis = () => {
       infinite: false,
     })
 
+    // @ts-ignore
+    window.lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)

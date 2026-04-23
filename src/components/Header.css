@@ -30,22 +30,19 @@
 /* Logo Styling */
 .logo-link {
   text-decoration: none;
-}
-
-.logo-main {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: var(--primary);
   display: flex;
   align-items: center;
 }
 
-.accent-dot {
-  color: var(--accent);
-  font-size: 2rem;
-  line-height: 0;
-  margin-left: 2px;
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.scrolled .logo-img {
+  height: 40px;
 }
 
 /* Nav Links Styling */

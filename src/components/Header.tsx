@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.jpeg';
 import './Header.css';
 
 const Header = () => {
@@ -23,7 +24,7 @@ const Header = () => {
             <nav className="container nav-wrapper">
                 <div className="logo">
                     <Link to="/" className="logo-link">
-                        <span className="logo-main">Dhaka airport <span className="accent-dot">meet and greet</span></span>
+                        <img src={logo} alt="Dhaka Airport Meet and Greet" className="logo-img" />
                     </Link>
                 </div>
 
