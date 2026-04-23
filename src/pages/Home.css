@@ -71,6 +71,11 @@
   color: var(--primary);
 }
 
+.btn-outline i.ri-whatsapp-line {
+  color: #25D366; /* WhatsApp Green */
+  font-size: 1.25rem;
+}
+
 .hero-stats {
   position: absolute;
   bottom: 50px;
