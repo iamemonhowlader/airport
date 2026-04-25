@@ -37,73 +37,11 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Core Services */}
+            {/* Our Packages Section */}
             <section className="section-padding services-section">
                 <div className="container text-center mb-50">
                     <h2 className="section-title">Our <span className="accent-text">Packages</span></h2>
                     <p className="section-subtitle">Tailored assistance for every type of traveler</p>
-                </div>
-                <div className="container grid-3">
-                    <div className="service-card glass-card">
-                        <div className="service-icon">✈️</div>
-                        <h3>Departure Service</h3>
-                        <p>End-to-end assistance from the terminal gate to your boarding gate.</p>
-                        <Link to="/meet-greet-services/" className="service-link">View Details →</Link>
-                    </div>
-                    <div className="service-card glass-card highlight-card">
-                        <div className="service-icon">🚕</div>
-                        <h3>VIP Transfers</h3>
-                        <p>Luxury car pickups and drops with professional chauffeurs.</p>
-                        <Link to="/car-service/" className="service-link">Explore Cars →</Link>
-                    </div>
-                    <div className="service-card glass-card">
-                        <div className="service-icon">🏨</div>
-                        <h3>Lounge Access</h3>
-                        <p>Relax in the finest airport lounges while we handle your paperwork.</p>
-                        <Link to="/services/" className="service-link">Learn More →</Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Why Choose Us */}
-            <section className="section-padding bg-dark-deep why-us">
-                <div className="container split-layout">
-                    <div className="why-us-content">
-                        <h2 className="white-text">Why Experience <br /> Airport Help Service?</h2>
-                        <ul className="why-us-list">
-                            <li>
-                                <span className="check">✓</span>
-                                <div>
-                                    <h4>Priority Fast Track</h4>
-                                    <p>Bypass long immigration lines with dedicated assistance.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span className="check">✓</span>
-                                <div>
-                                    <h4>Luggage Assistance</h4>
-                                    <p>Our porters take care of your heavy bags from start to finish.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span className="check">✓</span>
-                                <div>
-                                    <h4>Multilingual Staff</h4>
-                                    <p>Friendly staff speaking English, Bengali, and more.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="why-us-image">
-                       <img src="/images/new.png" alt="VIP Airport Support" />
-                    </div>
-                </div>
-            </section>
-
-            {/* Pricing Section */}
-            <section className="section-padding pricing-section">
-                <div className="container text-center mb-50">
-                    <h2 className="section-title">Our Packages <span className="accent-text">(Starting From)</span></h2>
                 </div>
                 <div className="container grid-3">
                     <div className="pricing-card glass-card">
@@ -147,6 +85,42 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Why Choose Us */}
+            <section className="section-padding bg-dark-deep why-us">
+                <div className="container split-layout">
+                    <div className="why-us-content">
+                        <h2 className="white-text">Why Experience <br /> Airport Help Service?</h2>
+                        <ul className="why-us-list">
+                            <li>
+                                <span className="check">✓</span>
+                                <div>
+                                    <h4>Priority Fast Track</h4>
+                                    <p>Bypass long immigration lines with dedicated assistance.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="check">✓</span>
+                                <div>
+                                    <h4>Luggage Assistance</h4>
+                                    <p>Our porters take care of your heavy bags from start to finish.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="check">✓</span>
+                                <div>
+                                    <h4>Multilingual Staff</h4>
+                                    <p>Friendly staff speaking English, Bengali, and more.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="why-us-image">
+                       <img src="/images/new.png" alt="VIP Airport Support" />
+                    </div>
+                </div>
+            </section>
+
 
              {/* Booking CTA */}
              <section className="section-padding booking-cta">
