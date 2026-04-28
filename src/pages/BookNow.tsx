@@ -325,7 +325,7 @@ const BookNow = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="form-label">Package Photo / Upload Ticket</label>
+                                    <label className="form-label">Passenger Image</label>
                                     <input 
                                         type="file" 
                                         name="uploadImage" 

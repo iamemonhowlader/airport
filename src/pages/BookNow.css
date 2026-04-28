@@ -217,6 +217,7 @@
   padding: 0.875rem 0.5rem;
   background: transparent;
   outline: none;
+  width: 120px;
 }
 
 .guest-count-input:focus {
