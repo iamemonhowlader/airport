@@ -157,16 +157,6 @@ const BookNow = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="form-label">Service Type</label>
-                                    <select name="serviceType" className="form-select" required onChange={handleChange}>
-                                        <option value="">—Please choose an option—</option>
-                                        <option value="meet-greet">Meet & Greet Service</option>
-                                        <option value="transit">Transit Assistance</option>
-                                        <option value="vip">VIP Protocol Service</option>
-                                    </select>
-                                </div>
-
-                                <div className="form-group">
                                     <label className="form-label">Service Direction</label>
                                     <div className="service-direction-buttons">
                                         <button
@@ -186,8 +176,18 @@ const BookNow = () => {
                                     </div>
                                 </div>
 
+                                <div className="form-group">
+                                    <label className="form-label">Service Type</label>
+                                    <select name="serviceType" className="form-select" required onChange={handleChange}>
+                                        <option value="">—Please choose an option—</option>
+                                        <option value="meet-greet">Meet & Greet Service</option>
+                                        <option value="transit">Transit Assistance</option>
+                                        <option value="vip">VIP Protocol Service</option>
+                                    </select>
+                                </div>
+
                                 {/* Package Display Section */}
-                                {formData.serviceDirection && (
+                                {formData.serviceType && (
                                     <div className="form-group full-width">
                                         <div className="packages-section">
                                             <h3 className="packages-title">
@@ -195,7 +195,7 @@ const BookNow = () => {
                                                 <span className="packages-subtitle">Tailored assistance for every type of traveler</span>
                                             </h3>
                                             <div className="packages-simple-list">
-                                                {packages[formData.serviceDirection as keyof typeof packages].map((pkg, index) => (
+                                                {packages[formData.serviceDirection as keyof typeof packages || packages.arrival].map((pkg, index) => (
                                                     <div key={index} className="package-simple-item">
                                                         <div className="package-simple-header">
                                                             <div className="package-simple-info">
