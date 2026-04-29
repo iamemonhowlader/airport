@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import BookNow from './pages/BookNow';
+import BookingConfirmation from './pages/BookingConfirmation';
 import CarService from './pages/CarService';
 import MeetGreetService from './pages/MeetGreetService';
 import FAQ from './pages/FAQ';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about/" element={<About />} />
           <Route path="/book-now/" element={<BookNow />} />
+          <Route path="/booking-confirmation/" element={<BookingConfirmation />} />
           <Route path="/services/" element={<MeetGreetService />} />
           <Route path="/car-service/" element={<CarService />} />
           <Route path="/meet-greet-services/" element={<MeetGreetService />} />

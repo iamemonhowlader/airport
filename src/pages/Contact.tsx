@@ -39,7 +39,7 @@ const Contact = () => {
                                 <div className="contact-icon">📞</div>
                                 <div className="contact-detail">
                                     <h4>Phone Number</h4>
-                                    <a href="tel:+8801325172266">+8801325-172266</a>
+                                    <a href="tel:01890844022">01890844022</a>
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@ const Contact = () => {
                                 <div className="contact-icon">✉️</div>
                                 <div className="contact-detail">
                                     <h4>Email Support</h4>
-                                    <a href="mailto:airporthelpservicebd@gmail.com">airporthelpservicebd@gmail.com</a>
+                                    <a href="mailto:dhakaairportmeetandgreet@gmail.com">dhakaairportmeetandgreet@gmail.com</a>
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@ const Contact = () => {
                                 <div className="contact-icon">💬</div>
                                 <div className="contact-detail">
                                     <h4>24/7 WhatsApp</h4>
-                                    <a href="https://wa.me/8801325172266" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+                                    <a href="https://wa.me/8801890844022" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
                                 </div>
                             </div>
                         </div>

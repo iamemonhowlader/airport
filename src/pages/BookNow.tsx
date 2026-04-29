@@ -1,93 +1,91 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { countryCodes } from '../utils/countryCodes';
+import { bookingService, type BookingData } from '../services/api';
 import './BookNow.css';
 
 const BookNow = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         fullName: '',
         countryCode: '+880',
         phoneNumber: '',
         country: '',
         serviceType: '',
-        serviceDirection: '', // New: arrival/departure selection
+        serviceDirection: '',
         flightCode: '',
         date: '',
-        time: '', // New: time selection
+        time: '',
         etpSystem: false,
-        guestCount: '1', // Default to 1
+        guestCount: '1',
         email: '',
         uploadImage: null,
-        comment: '',
-        selectedPackage: '' // New: selected package
+        comment: ''
     });
-
-    // Package data based on service direction
-    const packages = {
-        arrival: [
-            {
-                name: 'SILVER',
-                price: { bdt: 'BDT 500', usd: 'USD 4.99' },
-                description: 'From arrival pickup point up to immigration',
-                features: ['Luggage Handling'],
-                popular: false
-            },
-            {
-                name: 'GOLD',
-                price: { bdt: 'BDT 1000', usd: 'USD 8.99' },
-                description: 'From on arrival immigration point up to arrival pickup point',
-                features: ['Luggage Handling', 'Immigration assistance'],
-                popular: true
-            },
-            {
-                name: 'PLATINUM',
-                price: { bdt: 'BDT 1500', usd: 'USD 12.99' },
-                description: 'On arrival visa assistance and luggage handling',
-                features: ['Luggage Handling', 'Immigration assistance', 'Visa assistance'],
-                popular: false
-            }
-        ],
-        departure: [
-            {
-                name: 'SILVER',
-                price: { bdt: 'BDT 500', usd: 'USD 4.99' },
-                description: 'From departure drop-off up to immigration',
-                features: ['Luggage Handling'],
-                popular: false
-            },
-            {
-                name: 'GOLD',
-                price: { bdt: 'BDT 1000', usd: 'USD 8.99' },
-                description: 'From departure drop-off up to Boarding Bridge',
-                features: ['Luggage Handling', 'Immigration assistance'],
-                popular: true
-            },
-            {
-                name: 'PLATINUM',
-                price: { bdt: 'BDT 1500', usd: 'USD 12.99' },
-                description: 'Domestic to international luggage assistance and vice versa',
-                features: ['Luggage Handling', 'Immigration assistance', 'Special luggage support'],
-                popular: false
-            }
-        ]
-    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const target = e.target as HTMLInputElement;
         const { name, value, type, checked } = target;
-        
+
         if (type === 'file' && target.files) {
             setFormData(prev => ({ ...prev, [name]: target.files![0] }));
         } else if (type === 'checkbox') {
             setFormData(prev => ({ ...prev, [name]: checked }));
+        } else if (name === 'time') {
+            // ✅ FIX: Typing-এর সময় শুধু valid characters (0-9 এবং :) allow করো
+            // Final validation submit-এ হবে
+            const partialTimeRegex = /^[0-9:]*$/;
+            if (partialTimeRegex.test(value) && value.length <= 5) {
+                setFormData(prev => ({ ...prev, [name]: value }));
+            }
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Booking Data:', formData);
-        alert('Thank you! Your booking request has been submitted. We will contact you shortly.');
+
+        // ✅ Submit-এ strict time validation
+        const timeRegex = /^([01][0-9]|2[0-3]):[0-5][0-9]$/;
+        if (!timeRegex.test(formData.time)) {
+            alert('সঠিক সময় দাও (HH:MM format, যেমন: 09:30 বা 23:45)');
+            return;
+        }
+
+        const submitButton = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+
+        try {
+            const bookingData: BookingData = {
+                full_name: formData.fullName,
+                phone_number: `${formData.countryCode}${formData.phoneNumber}`,
+                email: formData.email || undefined,
+                service_type: formData.serviceType,
+                flight_code: formData.flightCode,
+                route: formData.serviceDirection || undefined,
+                service_date: formData.date || undefined,
+                flight_time: formData.time || undefined,
+                guest_count: formData.guestCount || undefined,
+                ticket_image: formData.uploadImage || undefined,
+                comment: formData.comment || undefined,
+            };
+
+            const response = await bookingService.createBooking(bookingData);
+
+            navigate('/booking-confirmation/', {
+                state: { bookingData: response.data?.booking }
+            });
+
+        } catch (error) {
+            console.error('Booking submission failed:', error);
+            alert(`Booking submission failed: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`);
+        } finally {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
     };
 
     return (
@@ -97,14 +95,14 @@ const BookNow = () => {
                     {/* Sticky Info Panel */}
                     <div className="booking-info">
                         <div className="glass-card">
-                            <img 
-                                src="/images/new3.png" 
-                                alt="Airport Meet & Greet" 
+                            <img
+                                src="/images/new3.png"
+                                alt="Airport Meet & Greet"
                                 className="booking-info-img"
                             />
                             <h2 className="booking-info-title gradient-text">Book Dhaka airport meet and greet</h2>
                             <p className="booking-info-text">
-                                Don't let airport logistics stress you out. Whether you’re arriving or departing Hazrat Shahjalal International Airport, our professional concierges are here to ensure your journey is seamless and comfortable.
+                                Don't let airport logistics stress you out. Whether you're arriving or departing Hazrat Shahjalal International Airport, our professional concierges are here to ensure your journey is seamless and comfortable.
                             </p>
                             <div className="benefit-checklist" style={{ display: 'grid', gap: '0.75rem', color: 'var(--text-muted)' }}>
                                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>⭐ VIP Lounge Access Options</div>
@@ -120,12 +118,12 @@ const BookNow = () => {
                             <form onSubmit={handleSubmit} className="form-grid">
                                 <div className="form-group">
                                     <label className="form-label">Full Name</label>
-                                    <input 
-                                        type="text" 
-                                        name="fullName" 
-                                        placeholder="Enter your name" 
-                                        className="form-input" 
-                                        required 
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        placeholder="Enter your name"
+                                        className="form-input"
+                                        required
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -133,10 +131,10 @@ const BookNow = () => {
                                 <div className="form-group">
                                     <label className="form-label">WhatsApp Number</label>
                                     <div className="phone-input-wrapper">
-                                        <select 
-                                            name="countryCode" 
-                                            className="country-code-select" 
-                                            value={formData.countryCode} 
+                                        <select
+                                            name="countryCode"
+                                            className="country-code-select"
+                                            value={formData.countryCode}
                                             onChange={handleChange}
                                         >
                                             {countryCodes.map((item) => (
@@ -145,12 +143,12 @@ const BookNow = () => {
                                                 </option>
                                             ))}
                                         </select>
-                                        <input 
-                                            type="tel" 
-                                            name="phoneNumber" 
-                                            placeholder="0123456789" 
-                                            className="form-input phone-main-input" 
-                                            required 
+                                        <input
+                                            type="tel"
+                                            name="phoneNumber"
+                                            placeholder="0123456789"
+                                            className="form-input phone-main-input"
+                                            required
                                             onChange={handleChange}
                                         />
                                     </div>
@@ -180,93 +178,49 @@ const BookNow = () => {
                                     <label className="form-label">Service Type</label>
                                     <select name="serviceType" className="form-select" required onChange={handleChange}>
                                         <option value="">—Please choose an option—</option>
-                                        <option value="meet-greet">Meet & Greet Service</option>
-                                        <option value="transit">Transit Assistance</option>
-                                        <option value="vip">VIP Protocol Service</option>
+                                        <option value="SILVER">SILVER Package</option>
+                                        <option value="GOLD">GOLD Package</option>
+                                        <option value="PLATINUM">PLATINUM Package</option>
                                     </select>
                                 </div>
 
-                                {/* Package Display Section */}
-                                {formData.serviceType && (
-                                    <div className="form-group full-width">
-                                        <div className="packages-section">
-                                            <h3 className="packages-title">
-                                                Our Packages<br />
-                                                <span className="packages-subtitle">Tailored assistance for every type of traveler</span>
-                                            </h3>
-                                            <div className="packages-simple-list">
-                                                {packages[formData.serviceDirection as keyof typeof packages || packages.arrival].map((pkg, index) => (
-                                                    <div key={index} className="package-simple-item">
-                                                        <div className="package-simple-header">
-                                                            <div className="package-simple-info">
-                                                                <div className="package-simple-name-section">
-                                                                    <input 
-                                                                        type="radio" 
-                                                                        id={`package-${pkg.name}`}
-                                                                        name="package-selection"
-                                                                        className="package-simple-radio"
-                                                                        value={pkg.name}
-                                                                        checked={formData.selectedPackage === pkg.name}
-                                                                        onChange={(e) => {
-                                                                            if (e.target.checked) {
-                                                                                setFormData(prev => ({ ...prev, selectedPackage: pkg.name }));
-                                                                            }
-                                                                        }}
-                                                                    />
-                                                                    <label htmlFor={`package-${pkg.name}`} className="package-simple-name">
-                                                                        {pkg.name}
-                                                                        {pkg.popular && <span className="popular-text">Most Popular</span>}
-                                                                    </label>
-                                                                </div>
-                                                                <div className="package-simple-prices">
-                                                                    <div className="price-bdt">{pkg.price.bdt}</div>
-                                                                    <div className="price-usd">{pkg.price.usd}</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-
                                 <div className="form-group">
                                     <label className="form-label">Flight Code No</label>
-                                    <input 
-                                        type="text" 
-                                        name="flightCode" 
-                                        placeholder="Ex: EK582 or QR638" 
-                                        className="form-input" 
-                                        required 
+                                    <input
+                                        type="text"
+                                        name="flightCode"
+                                        placeholder="Ex: EK582 or QR638"
+                                        className="form-input"
+                                        required
                                         onChange={handleChange}
                                     />
                                 </div>
-
 
                                 <div className="form-group">
                                     <label className="form-label">Booking Date</label>
-                                    <input 
-                                        type="date" 
-                                        name="date" 
-                                        className="form-input" 
-                                        required 
+                                    <input
+                                        type="date"
+                                        name="date"
+                                        className="form-input"
+                                        required
                                         onChange={handleChange}
                                     />
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="form-label">Flight Time</label>
-                                    <input 
-                                        type="time" 
-                                        name="time" 
-                                        className="form-input" 
-                                        required 
+                                    <label className="form-label">Flight Time (24-hour format)</label>
+                                    <input
+                                        type="text"
+                                        name="time"
+                                        className="form-input"
+                                        required
+                                        placeholder="HH:MM"
+                                        // ✅ FIX: Correct regex — leading zero required (01-09, not 1-9)
+                                        pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$"
                                         onChange={handleChange}
+                                        value={formData.time || ''}
                                     />
                                 </div>
-
-                                
 
                                 <div className="form-group">
                                     <label className="form-label">Number of Guests</label>
@@ -283,13 +237,13 @@ const BookNow = () => {
                                         >
                                             -
                                         </button>
-                                        <input 
-                                            type="number" 
-                                            name="guestCount" 
+                                        <input
+                                            type="number"
+                                            name="guestCount"
                                             value={formData.guestCount}
-                                            className="guest-count-input" 
+                                            className="guest-count-input"
                                             min="1"
-                                            required 
+                                            required
                                             onChange={(e) => {
                                                 const value = e.target.value;
                                                 if (value === '' || (parseInt(value) >= 1 && parseInt(value) <= 99)) {
@@ -314,22 +268,22 @@ const BookNow = () => {
 
                                 <div className="form-group">
                                     <label className="form-label">E-mail Address</label>
-                                    <input 
-                                        type="email" 
-                                        name="email" 
-                                        placeholder="Enter your E-mail" 
-                                        className="form-input" 
-                                        required 
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter your E-mail"
+                                        className="form-input"
+                                        required
                                         onChange={handleChange}
                                     />
                                 </div>
 
                                 <div className="form-group">
                                     <label className="form-label">Passenger Image</label>
-                                    <input 
-                                        type="file" 
-                                        name="uploadImage" 
-                                        className="form-input" 
+                                    <input
+                                        type="file"
+                                        name="uploadImage"
+                                        className="form-input"
                                         accept="image/*"
                                         onChange={handleChange}
                                     />
@@ -337,9 +291,9 @@ const BookNow = () => {
 
                                 <div className="form-group full-width">
                                     <label className="form-label">Special Requests / Comments</label>
-                                    <textarea 
-                                        name="comment" 
-                                        placeholder="Write your comment here..." 
+                                    <textarea
+                                        name="comment"
+                                        placeholder="Write your comment here..."
                                         className="form-textarea"
                                         onChange={handleChange}
                                     ></textarea>

@@ -32,10 +32,10 @@ const Footer = () => {
                 <div className="footer-contact">
                     <h4>Connect</h4>
                     <p><i className="ri-map-pin-line"></i> Departure Terminal 1, HSIA, Dhaka</p>
-                    <p><i className="ri-phone-line"></i> +8801325172266</p>
-                    <p><i className="ri-mail-line"></i> airporthelpservicebd@gmail.com</p>
+                    <p><i className="ri-phone-line"></i> 01890844022</p>
+                    <p><i className="ri-mail-line"></i> dhakaairportmeetandgreet@gmail.com</p>
                     <div className="whatsapp-box">
-                        <a href="https://wa.me/8801325172266" className="btn-whatsapp">
+                        <a href="https://wa.me/8801890844022" className="btn-whatsapp">
                             <i className="ri-whatsapp-line"></i> Chat on WhatsApp
                         </a>
                     </div>
