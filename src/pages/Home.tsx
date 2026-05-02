@@ -19,7 +19,7 @@ const Home = () => {
                         </p>
                         <div className="hero-actions">
                             <Link to="/book-now/" className="btn-accent">Book Now</Link>
-                            <a href="https://wa.me/8801325172266" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                            <a href="https://wa.me/8801890844022" target="_blank" rel="noopener noreferrer" className="btn-outline">
                                 <i className="ri-whatsapp-line"></i> WhatsApp Us
                             </a>
                         </div>
@@ -27,11 +27,11 @@ const Home = () => {
                     <div className="hero-stats">
                         <div className="stat-card glass-card">
                             <span className="stat-number">10k+</span>
-                            <span className="stat-label">Happy Clients</span>
+                            <span style={{color:'black'}} className="stat-label">Happy Clients</span>
                         </div>
                         <div className="stat-card glass-card">
                             <span className="stat-number">24/7</span>
-                            <span className="stat-label">Support</span>
+                            <span style={{color:'black'}} className="stat-label">Support</span>
                         </div>
                     </div>
                 </div>

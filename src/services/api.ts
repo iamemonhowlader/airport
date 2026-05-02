@@ -8,6 +8,7 @@ export interface BookingData {
   flight_code: string;
   route?: string;
   service_date?: string;
+  flight_time?: string;
   guest_count?: string;
   ticket_image?: File;
   comment?: string;

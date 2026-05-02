@@ -17,7 +17,7 @@ const FAQ = () => {
         },
         {
             q: "How can I book your service?",
-            a: "You can book directly via our 'Book Now' page or contact us on WhatsApp (+8801325172266). You can contact us through our website or directly via WhatsApp for booking.",
+            a: "You can book directly via our 'Book Now' page or contact us on WhatsApp (+8801890844022). You can contact us through our website or directly via WhatsApp for booking.",
             category: "Booking"
         },
         {
@@ -75,10 +75,10 @@ const FAQ = () => {
                         <h3>Still Have Questions?</h3>
                         <p>If you can't find what you're looking for, our 24/7 team is ready to talk.</p>
                         <div className="contact-links-faq">
-                            <a href="https://wa.me/8801325172266" className="contact-item">
+                            <a href="https://wa.me/8801890844022" className="contact-item">
                                 <i className="ri-whatsapp-line"></i> Chat with Expert
                             </a>
-                            <a href="tel:+8801325172266" className="contact-item mt-10">
+                            <a href="tel:+8801890844022" className="contact-item mt-10">
                                 <i className="ri-phone-fill"></i> Voice Assistance
                             </a>
                         </div>

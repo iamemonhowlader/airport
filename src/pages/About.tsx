@@ -171,7 +171,7 @@ const About = () => {
                             <h3>Ready to Travel Stress-Free?</h3>
                             <p>Currently we are providing services at Hazrat Shahjalal International Airport, Dhaka.</p>
                         </div>
-                        <a href="https://wa.me/8801325172266" className="btn-whatsapp-large" target="_blank">
+                        <a href="https://wa.me/8801890844022" className="btn-whatsapp-large" target="_blank">
                             <i className="ri-whatsapp-line"></i> Contact via WhatsApp
                         </a>
                    </div>

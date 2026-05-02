@@ -143,7 +143,7 @@ const MeetGreetService = () => {
                                 <p>Our 60+ member team is standing by to assist with medical, corporate, or group requirements.</p>
                             </div>
                             <div className="btn-side">
-                                <a href="tel:+8801325172266" className="btn-luxury">
+                                <a href="tel:+8801890844022" className="btn-luxury">
                                     <i className="ri-phone-fill"></i> Call Expert Assistance
                                 </a>
                             </div>

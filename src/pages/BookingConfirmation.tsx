@@ -8,6 +8,13 @@ interface BookingData {
   status: string;
   ticket_image_url?: string;
   created_at: string;
+  flight_time?: string;
+  service_date?: string;
+  service_type?: string;
+  flight_code?: string;
+  full_name?: string;
+  phone_number?: string;
+  email?: string;
 }
 
 const BookingConfirmation = () => {
@@ -16,24 +23,51 @@ const BookingConfirmation = () => {
   const bookingData: BookingData = location.state?.bookingData;
 
   useEffect(() => {
-    // Redirect to book-now if no booking data is available
     if (!bookingData) {
       navigate('/book-now');
     }
   }, [bookingData, navigate]);
 
-  if (!bookingData) {
-    return null;
-  }
+  if (!bookingData) return null;
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+  // ✅ Safe date formatter (NO crash)
+  const safeFormat = (date: Date) => {
+    if (isNaN(date.getTime())) return '-';
+
+    return date.toLocaleString('en-GB', {
+      day: '2-digit',
+      month: 'short',
       year: 'numeric',
-      month: 'long',
-      day: 'numeric',
       hour: '2-digit',
-      minute: '2-digit'
+      minute: '2-digit',
+      hour12: true,
     });
+  };
+
+  // ✅ Format created_at
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return '-';
+    return safeFormat(new Date(dateString));
+  };
+
+  // ✅ MAIN FIX (handles all cases)
+  const formatServiceDateTime = (date?: string, time?: string) => {
+    if (!date) return '-';
+
+    try {
+      // Extract the YYYY-MM-DD part robustly from Laravel's ISO string or space-separated datetime
+      const datePart = date.split('T')[0].split(' ')[0];
+
+      if (datePart && time) {
+        return safeFormat(new Date(`${datePart}T${time}`));
+      }
+
+      // Fallback if only date is available
+      return safeFormat(new Date(date));
+
+    } catch {
+      return '-';
+    }
   };
 
   return (
@@ -41,6 +75,7 @@ const BookingConfirmation = () => {
       <div className="container">
         <div className="confirmation-container">
           <div className="glass-card">
+
             {/* Success Icon */}
             <div className="success-icon">
               <div className="success-checkmark">
@@ -52,7 +87,7 @@ const BookingConfirmation = () => {
               </div>
             </div>
 
-            {/* Confirmation Content */}
+            {/* Content */}
             <div className="confirmation-content">
               <h1 className="confirmation-title">Booking Confirmed!</h1>
               <p className="confirmation-message">
@@ -62,33 +97,81 @@ const BookingConfirmation = () => {
               {/* Booking Details */}
               <div className="booking-details">
                 <h2 className="details-title">Booking Details</h2>
-                
+
                 <div className="detail-grid">
+
                   <div className="detail-item">
                     <label className="detail-label">Booking Code</label>
-                    <div className="detail-value booking-code">{bookingData.code}</div>
+                    <div className="detail-value booking-code">
+                      {bookingData.code || '-'}
+                    </div>
                   </div>
-                  
+
                   <div className="detail-item">
                     <label className="detail-label">Booking ID</label>
-                    <div className="detail-value">#{bookingData.id}</div>
+                    <div className="detail-value">
+                      #{bookingData.id || '-'}
+                    </div>
                   </div>
-                  
+
                   <div className="detail-item">
                     <label className="detail-label">Status</label>
                     <div className={`detail-value status ${bookingData.status}`}>
-                      {bookingData.status.charAt(0).toUpperCase() + bookingData.status.slice(1)}
+                      {bookingData.status
+                        ? bookingData.status.charAt(0).toUpperCase() + bookingData.status.slice(1)
+                        : '-'}
                     </div>
                   </div>
-                  
+
                   <div className="detail-item">
-                    <label className="detail-label">Booking Date</label>
-                    <div className="detail-value">{formatDate(bookingData.created_at)}</div>
+                    <label className="detail-label">Service Date & Time</label>
+                    <div className="detail-value">
+                      {formatServiceDateTime(
+                        bookingData.service_date,
+                        bookingData.flight_time
+                      )}
+                    </div>
                   </div>
+
+                  {/* <div className="detail-item">
+                    <label className="detail-label">Booking Created At</label>
+                    <div className="detail-value">
+                      {formatDate(bookingData.created_at)}
+                    </div>
+                  </div> */}
+
+                  <div className="detail-item">
+                    <label className="detail-label">Flight Code</label>
+                    <div className="detail-value">
+                      {bookingData.flight_code || '-'}
+                    </div>
+                  </div>
+
+                  <div className="detail-item">
+                    <label className="detail-label">Customer Name</label>
+                    <div className="detail-value">
+                      {bookingData.full_name || '-'}
+                    </div>
+                  </div>
+
+                  <div className="detail-item">
+                    <label className="detail-label">Phone</label>
+                    <div className="detail-value">
+                      {bookingData.phone_number || '-'}
+                    </div>
+                  </div>
+
+                  <div className="detail-item">
+                    <label className="detail-label">Email</label>
+                    <div className="detail-value">
+                      {bookingData.email || '-'}
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              {/* Important Information */}
+              {/* Info */}
               <div className="important-info">
                 <h3 className="info-title">Important Information</h3>
                 <ul className="info-list">
@@ -99,7 +182,7 @@ const BookingConfirmation = () => {
                 </ul>
               </div>
 
-              {/* Action Buttons */}
+              {/* Action */}
               <div className="action-buttons">
                 <button 
                   onClick={() => navigate('/book-now')}
@@ -108,7 +191,9 @@ const BookingConfirmation = () => {
                   Make Another Booking
                 </button>
               </div>
+
             </div>
+
           </div>
         </div>
       </div>
